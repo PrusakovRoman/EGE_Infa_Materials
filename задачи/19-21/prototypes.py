@@ -21,8 +21,7 @@ def game(x,y):
     steps = (x+1,y), (x,y+1), (x*2,y), (x,y*2)
     if x+y >= 207: return 'win'
     if any(game(x,y) == 'win' for x,y in steps): return 'p1'
-    if any(game(x,y) == 'p1' for x,y in steps): return 'v1' #19
-    #if all(game(x,y) == 'p1' for x,y in steps): return 'v1' #20-21
+    if all(game(x,y) == 'p1' for x,y in steps): return 'v1' #20-21
     if any(game(x,y) == 'v1' for x,y in steps): return 'p2'
     if all(game(x,y) in ('p1', 'p2') for x,y in steps): return 'v2'
 
